@@ -57,13 +57,15 @@ add.addEventListener('click',()=>{
         closebutton.className='cls ';
         closebutton.src='./pictures/deletebtn.svg';
         items.append(closebutton);
-
+input.value='';
+inp.classList.add('none');
         // items.insertAdjacentHTML('afterend', '<img src="./pictures/deletebtn.svg" class="closebtn" alt="Close/Delete">');
         //     let imgXGray = listItem.nextSibling;
     closebutton.addEventListener('click',()=>{
     olList.removeChild(items);
     if(olList.children.length===0){
         list.classList.add('none');
+        inp.classList.remove('none')
     }
 });
 closebutton.addEventListener('mouseover',()=>{
@@ -73,8 +75,7 @@ closebutton.addEventListener('mouseout',()=>{
     closebutton.src='./pictures/deletebtn.svg';
 });
 
-input.value='';
-inp.classList.add('none');
+
 }
 });
 plus.addEventListener('click',()=>{
