@@ -74,10 +74,11 @@ closebutton.addEventListener('mouseover',()=>{
 closebutton.addEventListener('mouseout',()=>{
     closebutton.src='./pictures/deletebtn.svg';
 });
-
-
 }
 });
 plus.addEventListener('click',()=>{
-    inp.classList.remove('none');
+    inp.classList.toggle('none');
+    if(olList.children.length===0){
+        inp.classList.remove('none');
+    }
 })
