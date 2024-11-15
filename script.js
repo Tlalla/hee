@@ -35,12 +35,26 @@ zablack.addEventListener('mouseout',()=>{
     zagray.classList.remove('none');
     zablack.classList.add('none');
 })
+function sortListAZ(){
+    let sorting=Array.from(olList.children);
+    sorting.sort((a,b)=>a.textContent.localeCompare(b.textContent));
+    olList.textContent='';
+    sorting.forEach(item=>olList.appendChild(item));
+}
+function sortListZA(){
+    let sorting=Array.from(olList.children);
+    sorting.sort((a,b)=>b.textContent.localeCompare(a.textContent));
+    olList.textContent='';
+    sorting.forEach(item=>olList.appendChild(item));
+}
 azblack.addEventListener('click',()=>{
+    sortListAZ();
     alphabet.classList.add('none')
     azblack.classList.add('none');
     zablack.classList.remove('none');
 })
 zablack.addEventListener('click',()=>{
+    sortListZA();
     zablack.classList.add('none');
     alphabet.classList.remove('none');
 })
@@ -51,7 +65,7 @@ add.addEventListener('click',()=>{
         list.classList.remove('none')
         let items=document.createElement('li');
         items.classList.add('item');
-        // items.textContent=inpvalue;
+
         olList.appendChild(items);
         let spanElement=document.createElement('span');
         spanElement.classList.add('spanEl')
@@ -61,6 +75,14 @@ add.addEventListener('click',()=>{
         closebutton.classList.add('cls');
         closebutton.src='./pictures/deletebtn.svg';
         items.append(closebutton);
+        function sortListAZ(){
+    let sorting=Array.from(olList.children);
+    items.sort((a,b)=>a.textContent.localCompare(b.textContent));
+    olList.textContent='';
+    sorting.forEach(item=>olList.appendChild(item));
+}
+
+        
 input.value='';
 inp.classList.add('none');
         // items.insertAdjacentHTML('afterend', '<img src="./pictures/deletebtn.svg" class="closebtn" alt="Close/Delete">');
@@ -78,24 +100,14 @@ closebutton.addEventListener('mouseover',()=>{
 closebutton.addEventListener('mouseout',()=>{
     closebutton.src='./pictures/deletebtn.svg';
 });
-
-
-
-azblack.addEventListener('click',()=>{
-//  заняться сортировкой по алфавиту
-// исправить крестик(и отодвинуть направо + чтобы сидел на месте и не выходил за пределы, +и чтобы был посередине) Возможно если исправить чтобы он стоял посередине не придется делать третое
-// уменьшить расстояние начала листа с див бордер
-// уточнить что там с фокусом
 // УДАЧИИИИИИ!!!!
-
-
-
-})
 }
 });
 plus.addEventListener('click',()=>{
     inp.classList.toggle('none');
+    input.value=''
     if(olList.children.length===0){
         inp.classList.remove('none');
+
     }
 })
