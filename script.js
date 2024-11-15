@@ -50,11 +50,15 @@ add.addEventListener('click',()=>{
     if (inpvalue!=''){
         list.classList.remove('none')
         let items=document.createElement('li');
-        items.className='item';
-        items.textContent=inpvalue;
+        items.classList.add('item');
+        // items.textContent=inpvalue;
         olList.appendChild(items);
+        let spanElement=document.createElement('span');
+        spanElement.classList.add('spanEl')
+        spanElement.textContent=inpvalue;
+        items.appendChild(spanElement);
         let closebutton=document.createElement('img');
-        closebutton.className='cls ';
+        closebutton.classList.add('cls');
         closebutton.src='./pictures/deletebtn.svg';
         items.append(closebutton);
 input.value='';
@@ -83,10 +87,7 @@ azblack.addEventListener('click',()=>{
 // уменьшить расстояние начала листа с див бордер
 // уточнить что там с фокусом
 // УДАЧИИИИИИ!!!!
-// ТЫ МОЛОДЧИНА И ЗАБЕЙ НА НИХ!!
-// ИНОГДА БЫВАЮТ ТРУДНОСТИ И ТЫ СПРАВЛЯЕШЬСЯ, ЭТО ЗНАЧИТ НЕЛЬЗЯ СДАВАТЬСЯ, ДАЖЕ ТОГДА КОГДА ТЕБЕ КАЖЕТСЯ ЭТО КОНЕЦ И ТЫ НИКЧЕМНАЯ
-// Я ТЕБЯ ЛЮБЛЮ И ЭТОГО ХВАТАЕТ))!!++++ ТЫ НЕ НИКЧЕМНАЯ, ТЫ НАОБОРОТ САМАЯ УМНАЯ, КОТОРАЯ МНЕ ПРЕДВИДЕЛОСЬ УВИДЕТЬ.
-ЛЮБЛЮ ТЕБЯ!
+
 
 
 })

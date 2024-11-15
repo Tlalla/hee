@@ -84,17 +84,28 @@ input{
     margin-left: 14px;
     /* gap: 10px; */
 }
+ol{
+    counter-reset: lst;
+}
 .item{
-    word-wrap: break-word;
-    width: 258px;
-    margin-left: -9px;
-
+    width: 250px;
+    counter-increment: lst;
+    display: flex;
+    margin-left: -12px;
+}
+.spanEl{
+    word-break: break-all;
+}
+.item::before{
+    content: counter(lst) '. ';
 }
 .none{
     display: none;
 }
 .cls{
     width: 18px;
+    display: flex;
+    justify-content: flex-end;
 }
 @media screen and (min-width: 560px) and (max-width:992px) {
     .all{
@@ -147,8 +158,8 @@ input{
         /* gap: 10px; */
     }
     .item{
-        width: 220px;
-        margin-left: -9px;
+        width: 225px;
+        margin-left: -16px;
     }
     .cls{
         width:16px;
