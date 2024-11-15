@@ -75,11 +75,6 @@ input{
     justify-content: center;
     margin-top: 15px;
 }
-
-ol{
-    /* box-sizing: border-box; */
-    /* gap: 10px; */
-}
 .list{
     display: flex;
     justify-content: flex-start;
