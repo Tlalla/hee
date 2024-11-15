@@ -47,6 +47,12 @@ function sortListZA(){
     olList.textContent='';
     sorting.forEach(item=>olList.appendChild(item));
 }
+alphabet.addEventListener('click',()=>{
+    sortListAZ();
+})
+zagray.addEventListener('click',()=>{
+    sortListZA();
+})
 azblack.addEventListener('click',()=>{
     sortListAZ();
     alphabet.classList.add('none')
